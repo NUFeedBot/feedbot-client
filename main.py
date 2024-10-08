@@ -54,6 +54,7 @@ def process(assignment_spec_path,
             request_obj = {
                 'email': submitter_email,
                 'key': post_key,
+                'model': config["model"],
                 'parts': parts
             }
 

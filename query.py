@@ -31,14 +31,17 @@ def construct_prob(assignment, submission, problem, config):
         code = submission.at(problem.path, True).contents()
         dependencies_code = submission.extract_responses(problem.dependencies)
 
-        return {
+        res = {
             "path" : render_path(problem.path),
             "prompt" : prompt_from_prob(problem, code, assignment, config, dependencies_code),
             "code" : code
         }
+        if "delimiter" in config:
+            res["delimiter"] = config["delimiter"]
+        return res
     except e:
         logging.exception(e)
-        return  {
+        res = {
             "path": render_path(problem.path),
             "prompt": "ERROR",
             "code": "ERROR"
