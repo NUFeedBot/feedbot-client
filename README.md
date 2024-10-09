@@ -27,7 +27,7 @@ TODO: update below for required `--disable-dry-run` parameter.
 To run locally, printing to stdout:
 
 ``` python
-python main.py -d -s example/ex_submission.rkt -j example/ex_spec.json -a example/ex_assign.rkt -c config.json 
+python main.py -d -s test/ex_submission.rkt -j test/ex_spec.json -a test/ex_assign.rkt -c config.json 
 ```
 
 To post to a server:
