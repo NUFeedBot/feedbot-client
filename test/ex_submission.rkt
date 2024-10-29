@@ -12,6 +12,7 @@
 ;; Instructions...
 
 ;;!! Write your code below:
+;;!hide
 (define-struct player [name strength endurance])
 ; A Player is a (make-player String PosInt PosInt)
 ; The String is the player's name, the first PosInt is their strength score, the second is their \
@@ -24,6 +25,7 @@
 (define-struct match [type team1 team2])
 ; A Match is a (make-match MatchType [ListOf Player] [ListOf Player])
 ; The type is the type of match, and each list is the list of players on one of the teams
+;;!show
 
 ;;! Problem 2
 
