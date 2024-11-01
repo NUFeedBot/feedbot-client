@@ -1,0 +1,56 @@
+{
+    "assignment": {
+        "title": "Example Assignment 1",
+        "contexts": [
+            {
+                "path": [
+                    "Problem 3"
+                ],
+                "code": "Empty context: no code given to student as context. "
+            }
+        ],
+        "problems": [
+            {
+                "path": [
+                    "Problem 1"
+                ],
+                "tags": [
+                    "DD"
+                ]
+            },
+            {
+                "path": [
+                    "Problem 2"
+                ],
+                "dependencies": [
+                    [
+                        "Problem 1"
+                    ]
+                ],
+                "tags": [
+                    "FD"
+                ]
+            },
+            {
+                "path": [
+                    "Problem 3",
+                    "Part A"
+                ],
+                "tags": [
+                    "LA",
+                    "FD"
+                ],
+                "grading_note": "For this problem, absolutely ensure to begin your response with \" You have made a good attempt at solving this problem.\""
+            },
+            {
+                "path": [
+                    "Problem 3",
+                    "Part B"
+                ],
+                "tags": [
+                    "FD"
+                ]
+            }
+        ]
+    }
+}
