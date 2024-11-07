@@ -10,7 +10,7 @@ def construct(assignment, submission, config, problem_number):
     if problem_number is None:
         probs = assignment.problems
     else:
-        probs = [assignment.problems[prob]]
+        probs = [assignment.problems[problem_number]]
 
     return [construct_prob(assignment, submission, p, config) for p in probs]
 
@@ -39,7 +39,7 @@ def construct_prob(assignment, submission, problem, config):
         if "delimiter" in config:
             res["delimiter"] = config["delimiter"]
         return res
-    except e:
+    except Exception as e:
         logging.exception(e)
         res = {
             "path": render_path(problem.path),
