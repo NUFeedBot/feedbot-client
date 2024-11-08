@@ -60,7 +60,7 @@ class SubmissionTemplate:
             return self.after(MARKER + " " + path[0]).at(path[1:], is_student_response)
 
 
-    def extract_responses(self, problem_paths):
+    def extract_dependencies(self, problem_paths):
         """
         Given problem paths, extracts all student responses for these problem paths (to be used as dependencies)
         

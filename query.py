@@ -29,7 +29,7 @@ def construct_prob(assignment, submission, problem, config):
     try:
         validateSubmissionProb(problem.path, submission)
         code = submission.at(problem.path, True).contents()
-        dependencies_code = submission.extract_responses(problem.dependencies)
+        dependencies_code = submission.extract_dependencies(problem.dependencies)
 
         res = {
             "path" : render_path(problem.path),
