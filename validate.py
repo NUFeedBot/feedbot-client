@@ -29,9 +29,16 @@ def validateJson(jsondata):
 
     if not isinstance(jsondata, dict): raise MetaDataError("JSON metadata must be a dict")
     if not json_has(jsondata, "title", str): raise MetaDataError("Assignment must have title")
+    if not json_has(jsondata, "paths", list): raise MetaDataError("Assignment must have defined problem paths")
     if not json_has(jsondata, "problems", list): raise MetaDataError("Assignment must have problems")
     for prob in jsondata["problems"]: 
         validateJsonProb(prob)
+    for path in jsondata["paths"]:
+        if (not isinstance(path, list)):
+            raise MetaDataError("Each assignment path must be a list")
+        for part in path: 
+            if (not isinstance(part, str)):
+                raise MetaDataError("Each part of an assignment path must be a string")
 
 
 def validateJsonProb(prob_data):

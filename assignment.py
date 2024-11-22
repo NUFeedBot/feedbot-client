@@ -49,7 +49,7 @@ class AssignmentStatement:
         self.title = jsondata["title"]
         self.problems = []
 
-        problem_paths = [prob_data["path"] for prob_data in jsondata["problems"]]
+        problem_paths = jsondata["paths"]
 
         for prob in jsondata["problems"]:
             prob_dependencies = self.get_dependencies(prob, problem_paths)
@@ -69,13 +69,15 @@ class AssignmentStatement:
         dependencies = json_has_or(prob_data, "dependencies", list, []) #May include partial paths instead of final problems.
 
         for dep in dependencies:
+            #If it is a full path
             if (dep in problem_paths):
                 continue
 
+            #Check for partial paths
             is_partial_dependency = False
             for path in problem_paths:
-                if path[:len(dep)] == dep:
 
+                if path[:len(dep)] == dep:
                     if (not is_partial_dependency):
                         is_partial_dependency = True
                         dependencies.remove(dep)
